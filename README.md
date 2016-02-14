@@ -25,7 +25,7 @@ To install ChefDK inside the Vagrant box please uncomment it in the shell provis
 To launch the demo please run:
 
 ```
-~$ git clone https://github.com/fabiop/14feb2016.git && vagrant up
+~$ git clone https://github.com/fabiop/14feb2016.git && cd 14feb2016 && vagrant up
 ```
 
 For the sake of this demo, docker-compose will run in foreground mode so all the logs will
