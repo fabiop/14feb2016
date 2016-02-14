@@ -1,0 +1,22 @@
+#server {
+#       server_name <%= node['hostname'] %>;
+#       listen 80
+#       access_log /var/log/nginx.access.log;
+#       return 503;
+#}
+
+upstream my.webapp.com {
+	  	             least_conn;
+                  			# root_app1_1
+						server app1:8484;
+							# root_app2_1
+								server app2:8484;
+}
+server {
+       server_name my.webapp.com;
+       listen 80;
+       access_log /var/log/nginx.access.log;
+       location / {
+       		  proxy_pass http://my.webapp.com;
+		  	     }
+}
